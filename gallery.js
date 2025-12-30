@@ -1,4 +1,4 @@
-// Gallery page functionality
+t // Gallery page functionality
 
 document.addEventListener('DOMContentLoaded', function() {
     loadSavedImages();
@@ -16,10 +16,7 @@ function loadSavedImages() {
         const imgElement = document.createElement('img');
         imgElement.src = image.src;
         imgElement.alt = image.name;
-        imgElement.style.width = '300px';
-        imgElement.style.height = '200px';
         imgElement.style.objectFit = 'cover';
-        imgElement.style.margin = '15px';
         imgElement.style.borderRadius = '10px';
         imgElement.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.2)';
         gallery.appendChild(imgElement);

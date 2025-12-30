@@ -62,17 +62,14 @@ function loadSavedImages() {
                 const imgElement = document.createElement('img');
                 imgElement.src = image.src;
                 imgElement.alt = image.name;
-                imgElement.style.width = '200px';
-                imgElement.style.height = '150px';
                 imgElement.style.objectFit = 'cover';
-                imgElement.style.margin = '10px';
                 imgElement.style.borderRadius = '10px';
                 gallery.appendChild(imgElement);
             });
         }
 
-        // Add latest 4 images to slideshow
-        const latestImages = savedImages.slice(-4);
+        // Add latest 4 images to slideshow (LIFO order - most recent first)
+        const latestImages = savedImages.slice(-4).reverse();
         console.log('Slideshow images:', latestImages.length);
         if (slideshow) {
             latestImages.forEach(image => {
